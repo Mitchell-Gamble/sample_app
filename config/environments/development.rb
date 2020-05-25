@@ -32,7 +32,10 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  host = 'https://a18fc012e14d46b0a7c08f387f3e74f6.vfs.cloud9.us-east-2.amazonaws.com/'
+  config.action_mailer.default_url_options = { host: host }
 
   config.action_mailer.perform_caching = false
 
